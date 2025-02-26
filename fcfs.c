@@ -100,7 +100,7 @@ void fcfs(Process *process, size_t n)
 
     // Print result table with Waiting Time (WT) and Turnaround Time (TT)
     printf("\nResult Table:\n");
-    printf("ID  Arrival Time  Burst Time  Waiting Time  Turnaround Time\n");
+    printf("ID\tArrival Time\tBurst Time\tWaiting Time\tTurnaround Time\n");
 
     unsigned total_wt = 0, total_tt = 0;
     for (size_t i = 0; i < n; ++i)
@@ -110,7 +110,7 @@ void fcfs(Process *process, size_t n)
         total_wt += wt;
         total_tt += tt;
 
-        printf("P%zu  %u  %u  %u  %u\n", process[i].id, process[i].at, process[i].bt, wt, tt);
+        printf("P%zu \t %u \t\t %u \t\t %u \t\t %u\n", process[i].id, process[i].at, process[i].bt, wt, tt);
     }
     printf("\nAverage Waiting Time: %.2f\n", (float)total_wt / n);
     printf("Average Turnaround Time: %.2f\n", (float)total_tt / n);
